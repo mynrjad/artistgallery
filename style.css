@@ -1,0 +1,548 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', 'Times New Roman', sans-serif;
+}
+
+body {
+    background-image: url("../images/landingwp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* FRAME */
+.gallery-container{
+    position:relative;
+    width:100%;
+    height:500px;
+    margin-top:120px;
+    margin-bottom:100px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.gallery-title {
+    text-align: center;     
+    font-weight: bold;       
+    color: #ffffff;         
+    
+    
+    font-family: 'Georgia', 'Times New Roman', serif; 
+    font-size: 80px;        
+    margin-top: 50px;       
+    margin-bottom: 10px;     
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Dito FRAME layout */
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 350px; 
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.6s ease;
+    padding-bottom: 20px;
+}
+
+.frame img {
+    width: 85%;
+    height: 500px; 
+    object-fit: cover; 
+    object-position: center;
+    display: block;
+}
+
+/* ANIMATION NG FRAME */
+
+.frame.active{
+    transform:translate(-50%, -50%) scale(1.5);
+    opacity:1;
+    z-index:3;
+}
+
+.frame.left{
+    transform:translate(-180%, -50%) scale(.8);
+    opacity:.7;
+    z-index:2;
+}
+
+.frame.right{
+    transform:translate(80%, -50%) scale(.8);
+    opacity:.7;
+    z-index:2;
+}
+
+.frame.hidden{
+    transform:translate(-50%, -50%) scale(.5);
+    opacity:0;
+    pointer-events:none;
+}
+
+/* Mga name ng creator */
+
+.frame-title {
+    position: relative;
+    margin-top: -40px; 
+    
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    
+    opacity: 1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1); 
+}
+
+.frame:hover .frame-title{
+    top:15px;
+    opacity:1;
+}
+
+/* arrow position */
+
+.arrow {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    
+    background: none;
+    border: none;
+    
+    font-size: 75px;
+    color: white;
+    
+    cursor: pointer;
+    z-index: 15;
+}
+
+#prev {
+    left: 20px;  
+}
+
+#next {
+    right: 20px;
+}
+
+/* Dito yung sa Creator page */
+.bio{
+    color:white;
+    margin-top:20px;
+    font-size:20px;
+    line-height:1.5;
+    text-align:justify;
+    text-align-last:left;
+    max-width:700px;
+    margin-top:50px auto;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:100px auto;
+}
+/* Dito yung sa creator page */
+.creator {
+    background-image: url("../images/creatorwp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover; 
+}
+/* Dito yung sa Error page */
+.Errorpage {
+    background-image: url("../images/errorp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover; 
+}
+/* Dito yung sa Contact page */
+.Contact {
+    background-image: url("../images/Contact us.png");
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* Dito yung sa About page */
+.about {
+    background-image: url("../images/about.png");
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* Dito yung sa Artist page*/
+.artist {
+    background-image: url("../images/Artist.png");
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.museum-container {
+    display: flex;
+    justify-content: flex-end; /* Ililipat ang cards sa kanan */
+    align-items: center;
+    min-height: 100vh;
+    gap: 3rem;
+    padding-right: 15rem; /* Dagdag na space mula sa kanang gilid */
+    margin: auto;
+}
+
+.museum-card {
+    background-color: #ffffff; 
+    border: 1px solid #e0e0e0;
+    padding: 3rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Typography: Mas pormal at nababasa */
+.museum-title {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.label-mini {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #777;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.museum-text {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 2;
+}
+
+
+.form-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.form-input:focus {
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+
+.museum-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.museum-btn:hover { background-color: #1a1a1a;
+ }
+
+
+/* HEADER AREA */
+.top-bar {
+    background-color: #ffffff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.container {
+    max-width: 1500px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+}
+.logo {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #000000;
+    text-decoration: none;
+}
+.nav-links a, .logo a {
+    text-decoration: none;
+    color: #000;
+}
+.nav-menu-right {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+}
+.nav-menu-right {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; 
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: #0f0f0f;
+    font-weight: 600;
+    transition: color 0.2s ease; 
+}
+
+
+.nav-links a:hover {
+    color: #383838; 
+}
+
+.nav-links a:active {
+    opacity: 0.50;
+
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 6px 15px;
+    width: 250px;
+}
+
+.search-bar input, 
+.search-bar button {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.search-bar input {
+    width: 100%;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.search-bar button {
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-footer {
+    background-color: #1a1a1a; 
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    margin-top: 20px;          
+    border-top: 1px solid #333;
+}
+
+.footer-links a {
+    color: #ffffff;            
+    text-decoration: none;
+    margin: 0 10px;
+    opacity: 0.6;              
+}
+
+.footer-links a:hover {
+    opacity: 1;                
+}
+
+/* ARTWORK IMAGE */
+
+.art-image{
+    width:100%;
+    height:250px;
+    object-fit:contain;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.art-image:hover{
+    transform:scale(1.2);
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+
+    position:fixed;
+    z-index:9999;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.9);
+
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+
+    width:80%;
+    max-width:900px;
+
+    padding:30px;
+    border-radius:15px;
+
+    text-align:center;
+
+    color:white;
+}
+
+.modal-content img{
+
+    width:100%;
+    max-height:500px;
+
+    object-fit:contain;
+
+    border-radius:10px;
+}
+
+.close{
+
+    position:absolute;
+
+    top:20px;
+    right:40px;
+
+    color:white;
+
+    font-size:50px;
+
+    cursor:pointer;
+}
+
+/* ABOUT PAGE */
+
+.about-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.about-card{
+    position: relative;
+    left: 270px;
+    width: 80%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.about-card h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+}
+
+.about-card p{
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+/* Artist PAGE */
+
+.artist-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.artist-card {
+    position: relative;
+    margin-left: auto;
+    margin-right: 50px; 
+    
+    width: 350%;
+    max-width: 700px;
+    background-color: #ffffff;
+    color: #000000;
+    
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.artist-card h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+}
+
+.artist-card p{
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
